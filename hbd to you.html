@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts untuk gaya tulisan tangan dan elegan -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Poppins:wght@300;400;600&family=Playfair+Display:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <style>/* --- Reset Dasar --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f88df3; /* Warna krem vintage */
+  color: #3e2723;
+  overflow-x: hidden;
+}
+
+/* Perpindahan Halaman Smooth */
+.page {
+  display: none;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.page.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- HALAMAN 1 --- */
+#page-1 {
+  background-color: #fcd2df;
+}
+
+.cover-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.hero-image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 100%;
+}
+
+.number-left,
+.number-right {
+  font-size: 6rem;
+  font-weight: bold;
+  color: #e18389;
+  text-shadow: 2px 2px 0px #eeeaee;
+  font-family: serif;
+}
+
+.girl-photo {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 10px;
+  flex-shrink: 0;
+}
+
+.girl-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cake-img {
+  position: absolute;
+  top: 35%;
+  width: 100px;
+  max-width: 100%;
+  margin-top: -2px;
+}
+
+.handwritten-title {
+  font-family: "Caveat", cursive;
+  font-size: 3.5rem;
+  margin-top: 10px;
+  color: #663232;
+  word-break: break-word;
+}
+
+.btn-open {
+  margin-top: 25px;
+  padding: 10px 40px;
+  background-color: #e18389;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.btn-open:hover {
+  transform: scale(1.05);
+}
+
+/* --- HALAMAN 2 --- */
+#page-2 {
+  background-color: #523b32; /* Warna cokelat tua hangat */
+  color: #fff;
+}
+
+.page2-container {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.polaroid-stack {
+  position: relative;
+  width: 50%;
+  height: 240px; /* Diperbesar agar polaroid p3 tidak menabrak elemen di bawahnya */
+}
+
+.polaroid {
+  position: absolute;
+  background: white;
+  padding: 8px 8px 25px 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 110px;
+}
+
+.polaroid img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.p1 {
+  transform: rotate(-10deg);
+  top: 10px;
+  left: 10px;
+}
+.p2 {
+  transform: rotate(5deg);
+  top: 30px;
+  left: 70px;
+  z-index: 2;
+}
+.p3 {
+  transform: rotate(-5deg);
+  top: 90px;
+  left: 30px;
+  z-index: 3;
+}
+
+.envelope-wrapper {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.envelope {
+  width: 160px;
+  height: 120px;
+  background: #e8d0be;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #bda38f;
+}
+
+.tulips-img {
+  width: 250px;
+  max-width: 100%;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.countdown-section {
+  text-align: center;
+  margin: 15px 0;
+  width: 100%;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.timer-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  flex-wrap: wrap;
+}
+
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-unit small {
+  font-size: 0.6rem;
+  font-weight: normal;
+  opacity: 0.8;
+}
+
+.letter-card {
+  background-color: #f7eedb;
+  color: #333;
+  padding: 25px;
+  border-radius: 12px;
+  line-height: 1.6;
+  margin-top: 15px;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+
+.letter-card h3 {
+  margin-bottom: 10px;
+  font-family: "Playfair Display", serif;
+}
+
+.btn-next {
+  margin-top: 15px;
+  padding: 8px 25px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  float: right;
+}
+
+/* --- HALAMAN 3 --- */
+#page-3 {
+  background-color: #f4eee1;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.camera-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+
+.camera-img {
+  width: 260px;
+  max-width: 100%;
+  height: auto;
+}
+
+.viewfinder-photo {
+  position: absolute;
+  width: 90px;
+  height: 70px;
+  top: 45px;
+  left: 85px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.viewfinder-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.star-left {
+  width: 100px;
+  max-width: 30%;
+  position: absolute;
+  left: 75px;
+  top: 2px;
+}
+.bouquet-right {
+  width: 150px;
+  max-width: 40%;
+  position: absolute;
+  right: 25px;
+  bottom: 0;
+}
+
+.polaroid-row {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.polaroid-small {
+  background: white;
+  padding: 5px 5px 18px 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  width: 75px;
+}
+
+.polaroid-small img {
+  width: 100%;
+  height: 60px;
+  object-fit: cover;
+}
+
+.memo-text {
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* --- HALAMAN 4 --- */
+#page-4 {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.music-player-card {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  height: 220px;
+  margin-bottom: 30px;
+}
+
+.video-embed video {
+  width: 100%;
+  height: 220px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.flower-top-left {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 50px;
+  z-index: 10;
+}
+.sparkle-top-right {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 50px;
+  z-index: 10;
+}
+
+.turntable-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.turntable-player {
+  width: 180px;
+  height: 180px;
+  background: #e0e0e0;
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.platter {
+  width: 140px;
+  height: 140px;
+  background: #111;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rotating-photo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- HALAMAN 5 --- */
+#page-5 {
+  background-color: #4a342a;
+}
+
+.heart-collage {
+  position: relative;
+  width: 360px;
+  max-width: 100%;
+  height: 360px;
+  margin: 0 auto;
+}
+
+/* Style Dasar Polaroid dalam Kolase Hati */
+.heart-photo {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  background: #ffffff;
+  padding: 4px 4px 16px 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+  border-radius: 2px;
+  transition: transform 0.3s ease, z-index 0.3s ease;
+  cursor: pointer;
+}
+
+.heart-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1px;
+}
+
+/* Efek Hover saat Foto Disentuh/Didekati Cursor */
+.heart-photo:hover {
+  transform: scale(1.3) rotate(0deg) !important;
+  z-index: 100 !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* --- TATA LETAK PRESISI BENTUK HATI (14 FOTO) --- */
+
+/* Lengkungan Atas Kiri */
+.hp1 { top: 25px; left: 100px; transform: rotate(-8deg); z-index: 2; }
+.hp2 { top: 5px; left: 45px; transform: rotate(-12deg); z-index: 3; }
+.hp3 { top: 40px; left: 0px; transform: rotate(-15deg); z-index: 2; }
+
+/* Lengkungan Atas Kanan */
+.hp4 { top: 25px; left: 195px; transform: rotate(8deg); z-index: 2; }
+.hp5 { top: 5px; left: 250px; transform: rotate(12deg); z-index: 3; }
+.hp6 { top: 40px; left: 295px; transform: rotate(15deg); z-index: 2; }
+
+/* Sisi Samping Kiri Turun ke Bawah */
+.hp7 { top: 100px; left: -10px; transform: rotate(-10deg); z-index: 3; }
+.hp8 { top: 165px; left: 15px; transform: rotate(-5deg); z-index: 4; }
+.hp9 { top: 225px; left: 55px; transform: rotate(5deg); z-index: 5; }
+
+/* Sisi Samping Kanan Turun ke Bawah */
+.hp10 { top: 100px; left: 305px; transform: rotate(10deg); z-index: 3; }
+.hp11 { top: 165px; left: 280px; transform: rotate(5deg); z-index: 4; }
+.hp12 { top: 225px; left: 240px; transform: rotate(-5deg); z-index: 5; }
+
+/* Bagian Ujung Bawah (Lancip Hati) */
+.hp13 { top: 275px; left: 105px; transform: rotate(12deg); z-index: 6; }
+.hp14 { top: 275px; left: 190px; transform: rotate(-12deg); z-index: 6; }
+
+/* Ikon Hati Bergerak di Tengah */
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* ==========================================
+   PENYESUAIAN RESPONSIF (MEDIA QUERIES)
+   ========================================== */
+
+/* Perangkat Seluler / HP Kecil (Maksimal 480px) */
+@media (max-width: 480px) {
+  .number-left,
+  .number-right {
+    font-size: 4rem;
+  }
+
+  .girl-photo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .handwritten-title {
+    font-size: 2.5rem;
+  }
+
+ .top-section {
+    flex-direction: column; /* Mengubah susunan samping menjadi atas-bawah */
+    align-items: center;
+    gap: 25px; /* Memberikan jarak aman antar elemen */
+  }
+
+  .polaroid-stack {
+    width: 200px; /* Menyesuaikan lebar area tumpukan di tengah */
+    height: 230px;
+  }
+
+  .envelope-wrapper {
+    width: 150%;
+  }
+  
+
+  .p1 { left: 15%; }
+  .p2 { left: 35%; }
+  .p3 { left: 25%; }
+
+  .heart-collage {
+    transform: scale(0.8);
+    transform-origin: center center;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <!-- Musik Latar Belakang -->
+    <audio id="bg-music" loop>
+      <source src="ssstik.io_1790824574180.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Halaman 1: Cover / Halaman Depan -->
+    <section id="page-1" class="page active">
+      <div class="cover-container">
+        <div class="hero-image-wrapper">
+          <span class="number-left">1</span>
+          <div class="girl-photo">
+            <img src="fotobella.jpeg" alt="" />
+          </div>
+          <span class="number-right">8</span>
+        </div>
+        <h1 class="handwritten-title">Happy Birthday</h1>
+        <button class="btn-open" onclick="nextPage(2)">Open</button>
+      </div>
+    </section>
+
+    <!-- Halaman 2: Surat & Hitung Mundur -->
+    <section id="page-2" class="page">
+      <div class="page2-container">
+        <!-- Header Galeri Polaroid & Amplop Bunga -->
+        <div class="top-section">
+          <div class="polaroid-stack">
+            <div class="polaroid p1">
+              <img src="foto1.png" alt="Foto Memory 1" />
+            </div>
+            <div class="polaroid p2">
+              <img src="foto2.png" alt="Foto Memory 2" />
+            </div>
+            <div class="polaroid p3">
+              <img src="foto3.png" alt="Foto Memory 3" />
+            </div>
+          </div>
+          <div class="envelope-wrapper">
+            <div class="envelope">
+              <div class="envelope-inner">
+                <img
+                  src="amplop bunga.png"
+                  alt="Bunga Tulip"
+                  class="tulips-img"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timer Hitung Mundur -->
+        <div class="countdown-section">
+          <p class="subtitle">you're turn 18 baby!</p>
+          <div class="timer-box">
+            <div class="time-unit">
+              <span>07</span><small>DAY</small>
+            </div>
+            <span class="colon">:</span>
+            <div class="time-unit">
+              <span>10</span><small>MONTH</small>
+            </div>
+            <span class="colon">:</span>
+            <div class="time-unit">
+              <span>2026</span><small>YEAR</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Surat Ucapan -->
+        <div class="letter-card">
+          <h3>Happy birthday cintaa</h3>
+          <p>
+            Semoga panjang umur, sehat selalu, dan bahagia selalu. Semoga semua
+            impianmu tercapai dan selalu diberikan kemudahan dalam segala hal.
+            Terima kasih sudah menjadi bagian dari hidupku. Aku bersyukur bisa
+            mengenalmu dan memiliki kenangan indah bersamamu. Semoga hari ini
+            menjadi awal dari tahun yang penuh kebahagiaan dan kesuksesan untuk
+            mu. Selamat ulang tahun, semoga semua harapanmu terkabul!
+          </p>
+          <p class="closing">Enjoy your day, birthday babee! You deserve</p>
+          <button class="btn-next" onclick="nextPage(3)">Next &gt;&gt;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Halaman 3: Kenangan / Memories -->
+    <section id="page-3" class="page">
+      <div class="page3-container">
+        <h2 class="section-title">Welcome to our memories</h2>
+
+        <!-- Kamera Vintage Canon dengan Elemen Dekorasi -->
+        <div class="camera-wrapper">
+          <div class="camera-body">
+            <img src="fotoTV.png" alt="Kamera Canon" class="camera-img" />
+            <div class="viewfinder-photo"></div>
+          </div>
+        </div>
+
+        <!-- Barisan Foto Polaroid -->
+        <div class="polaroid-row">
+          <div class="polaroid-small">
+            <img src="foto4.png" alt="Memory 1" />
+          </div>
+          <div class="polaroid-small">
+            <img src="foto5.jpg" alt="Memory 2" />
+          </div>
+          <div class="polaroid-small">
+            <img src="foto6.jpg" alt="Memory 3" />
+          </div>
+          <div class="polaroid-small">
+            <img src="foto2.png" alt="Memory 4" />
+          </div>
+        </div>
+
+        <!-- Teks Pesan Tambahan -->
+        <p class="memo-text">
+          Terima kasih sudah menjadi bagian dari hidupku. Aku bersyukur bisa
+          kenal sama kamu dan memiliki kenangan indah sama kamu. Semoga hari ini
+          menjadi awal dari tahun yang penuh kebahagiaan dan kesuksesan untuk
+          mu. Selamat ulang tahun, semoga semua harapanmu terkabul!♡
+        </p>
+
+        <button class="btn-next" onclick="nextPage(4)">Next &gt;&gt;</button>
+      </div>
+    </section>
+
+    <!-- Halaman 4: Pemutar Musik & Pemutar Piringan Hitam (Turntable) -->
+    <section id="page-4" class="page">
+      <div class="page4-container">
+        <!-- Widget Pemutar Lagu Youtube/Video -->
+        <div class="music-player-card">
+          <img
+            src="download__1_-removebg-preview.png"
+            alt="Bunga Putih"
+            class="flower-top-left"
+          />
+          <div class="video-embed">
+            <video width="640" height="360" controls>
+              <source src="vidio1.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <img src="download-removebg-preview.png" alt="Sparkle" class="sparkle-top-right" />
+        </div>
+
+        <!-- Pemutar Turntable Piringan Hitam -->
+        <div class="turntable-wrapper">
+          <div class="vinyl-record">
+            <img src="vinyl-label.png" alt="" class="vinyl-center" />
+          </div>
+          <div class="turntable-player">
+            <div class="platter">
+              <img
+                src="fotovinyl.png"
+                alt="Foto Piringan Hitam"
+                class="rotating-photo"
+              />
+            </div>
+        </div>
+
+        <button class="btn-next" onclick="nextPage(5)">
+          Last part &gt;&gt;
+        </button>
+      </div>
+    </section>
+
+    <!-- Halaman 5: Kolase Foto Bentuk Hati -->
+    <section id="page-5" class="page">
+      <div class="page5-container">
+        <div class="heart-collage">
+          <!-- 16 Foto Polaroid Disusun Membentuk Hati -->
+          <div class="heart-photo hp1"><img src="foto15.jpg" alt="Love 1" /></div>
+          <div class="heart-photo hp2"><img src="foto2.png" alt="Love 2" /></div>
+          <div class="heart-photo hp3"><img src="foto3.png" alt="Love 3" /></div>
+          <div class="heart-photo hp4"><img src="foto4.png" alt="Love 4" /></div>
+          <div class="heart-photo hp5"><img src="foto5.jpg" alt="Love 5" /></div>
+          <div class="heart-photo hp6"><img src="foto6.jpg" alt="Love 6" /></div>
+          <div class="heart-photo hp7"><img src="foto7.jpg" alt="Love 7" /></div>
+          <div class="heart-photo hp8"><img src="foto8.jpg" alt="Love 8" /></div>
+          <div class="heart-photo hp9"><img src="foto9.jpg" alt="Love 9" /></div>
+          <div class="heart-photo hp10">
+            <img src="foto10.jpg" alt="Love 10" />
+          </div>
+          <div class="heart-photo hp11">
+            <img src="foto11.jpg" alt="Love 11" />
+          </div>
+          <div class="heart-photo hp12">
+            <img src="foto12.jpg" alt="Love 12" />
+          </div>
+          <div class="heart-photo hp13">
+            <img src="foto13.jpg" alt="Love 13" />
+          </div>
+          <div class="heart-photo hp14">
+            <img src="foto14.jpg" alt="Love 14" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Fungsi berpindah halaman
+      function nextPage(pageNumber) {
+        // Sembunyikan semua halaman
+        const pages = document.querySelectorAll(".page");
+        pages.forEach((page) => {
+          page.classList.remove("active");
+        });
+
+        // Tampilkan halaman tujuan
+        const targetPage = document.getElementById(`page-${pageNumber}`);
+        if (targetPage) {
+          targetPage.classList.add("active");
+        }
+
+        // Memutar musik otomatis saat menekan 'Open' pertama kali
+        if (pageNumber === 2) {
+          const music = document.getElementById("bg-music");
+          if (music) {
+            music.play().catch((error) => {
+              console.log("Autoplay diblokir oleh browser:", error);
+            });
+          }
+        }
+      }
+
+      // Logika Hitung Mundur Waktu (Timer)
+      function startCountdown() {
+        // Atur tanggal target ulang tahun di sini (Tahun-Bulan-Hari Jam:Menit:Detik)
+        const targetDate =
+          new Date().getTime() +
+          2 * 24 * 60 * 60 * 1000 +
+          1 * 60 * 60 * 1000 +
+          2 * 60 * 1000 +
+          40 * 1000;
+
+        setInterval(() => {
+          const now = new Date().getTime();
+          const difference = targetDate - now;
+
+          if (difference > 0) {
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor(
+              (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+            );
+            const minutes = Math.floor(
+              (difference % (1000 * 60 * 60)) / (1000 * 60),
+            );
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(days).padStart(
+              2,
+              "0",
+            );
+            document.getElementById("hours").innerText = String(hours).padStart(
+              2,
+              "0",
+            );
+            document.getElementById("minutes").innerText = String(
+              minutes,
+            ).padStart(2, "0");
+            document.getElementById("seconds").innerText = String(
+              seconds,
+            ).padStart(2, "0");
+          }
+        }, 1000);
+      }
+
+      // Jalankan fungsi saat dokumen dimuat
+      window.onload = () => {
+        startCountdown();
+      };
+    </script>
+  </body>
+</html>
